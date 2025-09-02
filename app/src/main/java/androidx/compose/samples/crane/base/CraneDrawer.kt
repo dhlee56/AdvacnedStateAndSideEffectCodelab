@@ -17,6 +17,7 @@
 package androidx.compose.samples.crane.base
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -48,7 +49,9 @@ fun CraneDrawer(modifier: Modifier = Modifier) {
         )
         for (screen in screens) {
             Spacer(Modifier.height(24.dp))
-            Text(text = screen, style = MaterialTheme.typography.h4)
+            Text(text = screen, style = MaterialTheme.typography.h4,
+                modifier = Modifier.clickable { println("KOTLINCLASS: click $screen") }
+                )
         }
     }
 }
